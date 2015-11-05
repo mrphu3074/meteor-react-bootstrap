@@ -10,10 +10,10 @@ Package.describe({
     documentation: 'README.md'
 });
 
-var BS_VERSION = '0.27.2',
+var BS_VERSION = '0.27.3',
     EXTERNALIFY_VERSION = '0.1.0',
-    REACT_VERSION = '0.14.0',
-    REACT_DOM_VERSION = '0.14.0';
+    REACT_VERSION = '0.14.2',
+    REACT_DOM_VERSION = '0.14.2';
 Npm.depends({
     'externalify': EXTERNALIFY_VERSION,
     'react' : REACT_VERSION,
@@ -22,10 +22,10 @@ Npm.depends({
 });
 
 Package.onUse(function(api){
-    api.use(['react@0.14.1_1', 'cosmos:browserify@0.8.1']);
+    api.use(['react@0.14.1_1', 'cosmos:browserify@0.8.2']);
     api.addFiles([
-        'bs.browserify.options.json',
-        'bs.browserify.js'
-    ]);
-    api.export(["ReactBootstrap"]);
+        'bs.browserify.js',
+        'bs.browserify.options.json'
+    ], 'client');
+    api.export(["ReactBootstrap"], 'client');
 });
